@@ -1,0 +1,3 @@
+<launch>
+  <node name="facedetect" pkg="rospy_facedetect" type="ros_facedetect" output="screen"/>
+</launch>
