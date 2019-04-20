@@ -27,12 +27,8 @@ def face_detect():
     model_path = os.path.join(os.path.dirname(__file__), 'haarcascade_frontalface_alt.xml')
     face_cascade = cv2.CascadeClassifier(model_path)
 
-    # hello_str = "hello world %s" % rospy.get_time()
-    # rospy.loginfo(hello_str)
-    # pub.publish(hello_str)
-
-
     # capture frames from the camera
+    t1 = rospy.get_time()
     for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
 
         if rospy.is_shutdown():
@@ -44,8 +40,9 @@ def face_detect():
         gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
         faces = face_cascade.detectMultiScale(gray, 1.1, 5)
         if faces != None and len(faces) > 0:
-            rospy.loginfo(str(faces))
+            rospy.loginfo('face detected: %s, started %s took %s' % (str(faces), t1, rospy.get_time() - t1))
             pub.publish(str(faces))
+
 
         # for (x,y,w,h) in faces:
         #     cv2.rectangle(image,(x,y),(x+w,y+h),(255,0,0),2)
@@ -60,6 +57,8 @@ def face_detect():
         # if key == ord("q"):
         #     break                 
         rate.sleep()
+	t1 = rospy.get_time()
+        #rospy.loginfo('[%s] capture started' % rospy.get_time())
 
 
 if __name__ == '__main__':

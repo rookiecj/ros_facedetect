@@ -1,7 +1,6 @@
 # ros_facedetect
 
-This is a simple face detect project based on OpenCV on ROS.
-
+This is a simple face detect ROS project based on OpenCV.
 
 ## build
 
@@ -13,8 +12,10 @@ $ git clone https://github.com/rookiecj/ros_facedetect.git  src/ros_facedetect
 
 ## launch
 
+```
 $ source devel/setup.bash
 $ roscore
+```
 
 facedetect node
 ```
