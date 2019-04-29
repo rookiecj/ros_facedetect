@@ -1,3 +1,5 @@
+This project merged into oroca/iTurtle.
+
 # ros_facedetect
 
 This is a simple face detect ROS project based on OpenCV.
@@ -13,7 +15,7 @@ $ git clone https://github.com/rookiecj/ros_facedetect.git  src/ros_facedetect
 ## launch
 
 ```
-$ source devel/setup.bash
+$ source install/setup.bash
 $ roscore
 ```
 
@@ -27,7 +29,7 @@ facedetect listener node
 $ rosrun rospy_facedetect ros_facedetect_listener.py
 ```
 
-sound player node
+for playing sound via ros_omxplayer
 ```
 $ rosrun ros_omxplayer ros_omxplayer
 ```
