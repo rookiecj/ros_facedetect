@@ -10,6 +10,7 @@ This is a simple face detect ROS project based on OpenCV.
 $ cd catkin_ws
 $ mkdir -p src
 $ git clone https://github.com/rookiecj/ros_facedetect.git  src/ros_facedetect
+$ catkin_make && catkin_make install
 ```
 
 ## launch
